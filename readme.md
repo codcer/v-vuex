@@ -48,6 +48,3 @@
    - 官方定义的模块，默认不支持热加载，或者需要写大量模块注入的方法（不方便）
    - 在主流 ide 中， 对自动代码提示不友善， 当用到某个 action 的时候，传参的时候还要查看 action 是怎么定义的
    - 使用的时候不够简洁， 比如还要手动去调用 mapActions/mapGetters..
-
-2) 详细用法请参考
-   [vue+webpack4+vue-router+vuex](https://github.com/codcer/vuewebpack4)

@@ -1,4 +1,5 @@
 let _store: Store;
+
 interface Store {
   dispatch: (actionType: string, payload?: any) => any;
   commit: (mtype: string, payload?: any) => any;
@@ -6,6 +7,7 @@ interface Store {
   state: object;
   unregisterModule: any;
 }
+
 interface Context {
   commit: (mutationName: string, payload?: any) => any;
   dispatch: (actionType: string, payload?: any) => any;
@@ -25,6 +27,8 @@ interface Result<K> {
     [str in keyof K]: (payload: any) => any;
   };
 }
+
+// 暴露连接vue/vuex方法，，类似react-redux，此工具也是这个方向
 export const connect = <T extends Actions, K extends Mutations>(model: {
   ns: string;
   getters?: object;
@@ -83,6 +87,8 @@ export const connect = <T extends Actions, K extends Mutations>(model: {
     throw new Error("v-vuex 未初始化, 请先调用 v-vuex(store)");
   }
 };
+
+// 暴露注册全局store方法
 export default (store: Store) => {
   _store = store;
 };
