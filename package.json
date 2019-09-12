@@ -1,0 +1,29 @@
+{
+  "name": "v-vuex",
+  "version": "1.0.0rc",
+  "description": "v-vuex 模拟react-redux 模块化",
+  "author": "codcer",
+  "keywords": [
+    "vue",
+    "vue-vuex",
+    "v-vuex",
+    "vuex",
+    "spirits",
+    "按需加载",
+    "模块化"
+  ],
+  "homepage": "https://github.com/codcer/v-vuex",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "devDependencies": {
+    "typescript": "^3.5.2"
+  }
+}
