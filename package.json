@@ -1,6 +1,6 @@
 {
   "name": "v-vuex",
-  "version": "1.0.0rc",
+  "version": "2.1.0",
   "description": "v-vuex 模拟react-redux 模块化",
   "author": "codcer",
   "keywords": [
@@ -8,6 +8,10 @@
     "vue-vuex",
     "v-vuex",
     "vuex",
+    "vuex-saga",
+    "redux-saga",
+    "saga",
+    "vuex-redux",
     "spirits",
     "按需加载",
     "模块化"
@@ -25,5 +29,8 @@
   ],
   "devDependencies": {
     "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "redux-saga": "^1.1.3"
   }
 }

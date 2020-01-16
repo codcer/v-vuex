@@ -8,8 +8,16 @@
     ```
 2.  注入 store
     ```javascript
-    import spirits from "v-vuex";
-    spirits(store); // 注入全局store
+    import VuexSaga from "v-vuex";
+    new Vuex({
+      ...,
+      plugins: [
+        VuexSaga({
+          sagas,   // 全局sagas, 可以为[]
+          ...
+        })
+      ]
+    }) // 注入全局store
     ```
 3.  与 model 进行链接
 
@@ -26,8 +34,12 @@
         }
       },
       actions: {
-        getDemo(val) {
+        getDemo1(val) {
           this.commit("setDeom", val);
+        },
+        *getDemo2(val) { // 和redux saga写法一样的
+          yelid call(api.fetch, params); // 触发vue中的请求
+          yelid put(`${models.ns}/${mutationName}`, valueJson); // 触发vue中的mutation
         }
       }
     });
@@ -35,8 +47,10 @@
 
 4.  使用
     ```javascript
+    // vue组件中使用
     import model from "../../models/test";
-    model.getDemo(123);
+    model.getDemo1(123); // 这个返回值，随使用者返回
+    model.getDemo2(123); // 这个返回值，随使用者返回
     ~~~基本介绍;
     ```
 
@@ -48,3 +62,4 @@
    - 官方定义的模块，默认不支持热加载，或者需要写大量模块注入的方法（不方便）
    - 在主流 ide 中， 对自动代码提示不友善， 当用到某个 action 的时候，传参的时候还要查看 action 是怎么定义的
    - 使用的时候不够简洁， 比如还要手动去调用 mapActions/mapGetters..
+2. 2.x 版本支持在 vue 中使用 redux-saga【最新版本 1.1.3】 编写 actions，用法同普通 model 中的 action 一样
